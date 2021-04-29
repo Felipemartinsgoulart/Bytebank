@@ -4,11 +4,19 @@ class ListaTransferencias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Column(children: <Widget>[
-      ItemTransferencia(Transferencia(100.0, 1000)),
-      ItemTransferencia(Transferencia(200.0, 2000)),
-      ItemTransferencia(Transferencia(300.0, 3000)),
-    ]);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Transferências'),
+      ),
+      body: Column(children: <Widget>[
+        ItemTransferencia(Transferencia(100.0, 1000)),
+        ItemTransferencia(Transferencia(200.0, 2000)),
+        ItemTransferencia(Transferencia(300.0, 3000)),
+      ]),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+      ),
+    );
   }
 }
 
@@ -40,18 +48,28 @@ class Transferencia {
 class FormularioTransferencia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Criando Transferência'),
+      ),
+      body: Column(
+        children: <Widget>[
+          TextField(),
+        ],
+      ),
+    );
   }
 }
 
-void main() => runApp(MaterialApp(
+void main() => runApp(BytebankApp());
+
+class BytebankApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       home: Scaffold(
-        body: ListaTransferencias(),
-        appBar: AppBar(
-          title: Text('Transferências'),
-        ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-        ),
+        body: FormularioTransferencia(),
       ),
-    ));
+    );
+  }
+}
