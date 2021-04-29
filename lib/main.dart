@@ -4,23 +4,24 @@ class ListaTransferencias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Column(
-      children: <Widget>[
-        Card(
-          child: ListTile(
-            leading: Icon(Icons.monetization_on),
-            title: Text('100.0'),
-            subtitle: Text('1000'),
-          ),
-        ),
-        Card(
-          child: ListTile(
-            leading: Icon(Icons.monetization_on),
-            title: Text('200.0'),
-            subtitle: Text('1000'),
-          ),
-        ),
-      ],
+    return Column(children: <Widget>[
+      ItemTransferencia(),
+      ItemTransferencia(),
+      ItemTransferencia(),
+    ]);
+  }
+}
+
+class ItemTransferencia extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Card(
+      child: ListTile(
+        leading: Icon(Icons.monetization_on),
+        title: Text('300.0'),
+        subtitle: Text('1000'),
+      ),
     );
   }
 }
